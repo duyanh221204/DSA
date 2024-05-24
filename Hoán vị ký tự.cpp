@@ -5,13 +5,13 @@ int n, d;
 void tt()
 {
     int x = n - 2, y = n - 1, l, r;
-    while (~x && s[x] > s[x + 1]) --x;
+    while (x >= 0 && s[x] > s[x + 1]) --x;
     if (x < 0)
     {
         d = 1;
         return;
     }
-    while (~y && s[x] > s[y]) --y;
+    while (y >= 0 && s[x] > s[y]) --y;
     if (y < 0)
     {
         d = 1;
