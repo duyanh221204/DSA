@@ -17,7 +17,7 @@ int main()
             for (int j = 1; j <= m; ++j)
             {
                 cin >> a[i][j];
-                if (a[i][j]) b[i][j] = b[i - 1][j] + a[i][j];
+                if (a[i][j] == 1) b[i][j] = b[i - 1][j] + a[i][j];
             }
         }
         for (int i = 1; i <= n; ++i)
@@ -32,7 +32,7 @@ int main()
                 st.push(j);
             }
             st = {};
-            for (int j = m; j; --j)
+            for (int j = m; j >= 1; --j)
             {
                 while (st.size() && b[i][j] <= b[i][st.top()]) st.pop();
                 if (st.size()) r[j] = st.top();
@@ -41,7 +41,7 @@ int main()
             }
             for (int j = 1; j <= m; ++j)
             {
-                if (a[i][j])
+                if (a[i][j] == 1)
                 {
                     if (b[i][j] * (r[j] - l[j] - 1) >= s)
                     {
