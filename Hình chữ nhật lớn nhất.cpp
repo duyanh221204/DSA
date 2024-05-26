@@ -49,6 +49,7 @@ int main()
                         int cd = max(b[i][j], r[j] - l[j] - 1), cr = min(b[i][j], r[j] - l[j] - 1);
                         if (cd - cr < d)
                         {
+                            d = cd - cr;
                             x = cr;
                             y = cd;
                         }
